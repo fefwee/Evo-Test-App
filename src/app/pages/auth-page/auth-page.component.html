@@ -1,0 +1,35 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="logo">
+      <img src="../../assets/Mark.svg" alt="" />
+    </div>
+    <h1>{{ title }}</h1>
+    <div>
+      <input type="text" placeholder="Логин" formControlName="username" />
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="Пароль"
+        formControlName="password"
+        type="password"
+      />
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        class="validation"
+      >
+        <small> Мин 5 символов </small>
+      </div>
+    </div>
+    <div class="submit_btn" routerLink="/auth">
+      <app-button
+        [btnTitle]="'Войти'"
+        [btnClass]="'auth'"
+        (btnClick)="login(form.value)"
+        [isDisabled]="!form.valid"
+      >
+      </app-button>
+      <a> </a>
+    </div>
+  </form>
+</div>

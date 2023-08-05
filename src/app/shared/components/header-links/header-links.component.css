@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+}
+.navigation a {
+  margin-right: 20px;
+}
+a {
+  color: #6b7280;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.column a:nth-child(1) {
+  padding: 16px 0;
+}
+.active {
+  color: black;
+}
+@media (min-width: 320px) and (max-width: 550px) {
+  .navigation nav a {
+    font-size: 16px;
+    text-align: center;
+  }
+  .navigation nav {
+    margin: 0 auto;
+  }
+  .navigation a {
+    margin-right: 15px;
+  }
+}
